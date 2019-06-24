@@ -1,0 +1,20 @@
+02. GET THE SAMPLE CODE
+
+Clone the codelab's GitHub repository from the command line:
+
+git clone https://github.com/firebase/friendlychat-web
+
+Alternatively, if you do not have git installed, you can download the repo as a zip file.
+
+The friendlychat-web repository contains sample projects for multiple platforms.
+
+This codelab only use these two repositories:
+  - web-start: The starting code that you'll build upon during this codelab.
+  - web: The complete code for the finished sample app.
+
+Note: If you would like to run the finished app, you'll still have to create a Firebase project in the Firebase console.
+
+Import the starter app
+
+Using your IDE, open or import the web-start directory from the cloned repository.
+This web-start directory contains the starting code for codelab which be a fully functional chat web ap.

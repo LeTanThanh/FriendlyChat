@@ -1,0 +1,107 @@
+07. SET UP USER SIGN-IN
+
+The Firebase SDK should now be ready to use since it's imported and initialized in index.html.
+We're now going to implement user sign-in using Firebsae Auth.
+
+AUTHENTICATE YOUR USERS WITH GOOGLE SIGN-IN
+
+In the app, when a user clicks the Sign in Google button, the signIn function is triggered (we already set that up for you).
+For this codelab, we want to authorized Firebase to use Googkr as the Identity Provider.
+We'll use a popup, but serveral other methods are available from Firebase.
+
+  1. In the web-start directory, in the subdirectory public/scripys/ open main.js.
+
+  2. Fign the function signIn.
+
+  3. Repleace the entire function with thw following code.
+
+main.js
+
+function signIn() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider);
+}
+
+The signOut function is triggered when the user clicks the Signout button.
+
+  1. Go back the file public/scripts/main.js
+
+  2. Find the function signOut.
+
+  3. Replace the entire function with the following code.
+
+main.js
+
+function signOut() {
+  firebase.auth().signOut();
+}
+
+TRACK THE AUTH STATE
+
+To update our UI accordingly, we need a way to check if the user us signed-in or signed-out.
+With Firebase Auth, you can register an observer on the authentication state which will be reiggered each time the auth state changes.
+
+  1. Go back to the file public/scripts/main.js
+
+  2. Find the function initFirebaseAuth.
+
+  3. REplace the entire function with the following code.
+
+main.js
+
+function initFirebaseAuth() {
+  firebase.auth().onAuthStateChanged(authStateObserver);
+}
+
+The code above register the function authStateObserver á the auth state observer.
+It will trigger each time the auth state changes, that is, when the user signs-in or signs-out.
+It's at this point that we'll update the UI to display or hide the sign-in button, the sign-out button,
+the signed-in user's profile picture, etc, - all these UI parts have already been implemented.
+
+DISPLAY THE INFORMATION OF THE SIGNED-IN USER
+
+We want to display tje signed-in user's profile pic and user name in the top bar of our app.
+In firebase, the signed-in user's data is always available in the firebase.auth().currentUser object.
+Earlier, we set up the authStateObserver function to trigger when the user signs-in so that our UI updates according ly.
+It will call getProfilePicUrl and getUserName when triggered.
+
+  1. Go back to the file public/scripts/main.js
+
+  2. Find the function getProfilePicUrl and getUserName.
+
+  3. Replace both functions with the following code.
+
+main.js
+
+function getProfilePicUrl() {
+  return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
+}
+
+function getUserName() {
+  return firebase.auth().currentUser.displayName;
+}
+
+We display an error message if the user tries to send messages when the user isn't signed-in (you can try it, though!).
+So, we need to detect if the user is actually signed-in.
+
+  1. Go back to the public/scripts/main.js
+
+  2. Find the function isUserSignedIn.
+
+  3. Replace the entire function with the following code.
+
+main.js
+
+function isUserSignedIn() {
+  return !!firebase.auth().currentUser;
+}
+
+TESTING SIGNING-IN TO THE APP
+
+  1. If your app is still being served, refresh your app in the browser.
+  Otherwise, run firebase serve on the command line to start serving the app from http://localhost:5000, then open it in your browser.
+
+  2. Sign into the app using the sign-in button and your Google account.
+  If you see an error message stating auth/operation-not-allowed, check to make sure that you enabled Google Sign-in as an auth ptovider om the Firebase console.
+
+  3. After signing-in, your profile pic and user name should display

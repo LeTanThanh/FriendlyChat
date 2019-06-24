@@ -1,0 +1,81 @@
+03. CREATE A FIREBASE PROJECT AND SET UP YOUR PROJECT
+
+CREATE A FIREBASE PROJECT
+
+1. In the Firebase console, click Add project, then name your project FriendlyChat.
+  Remember the Project ID for your Firebase project.
+
+2. Click Create Project.
+
+Important: Your Firebase project will be named FriendlyChat, 
+but Firebase will automatically assign it a unique Project ID in the form friendlychat-1234.
+This unique identifier is how your project is actually identifier (including in the CLI), whereas FriendlyChat is simply a display name.
+
+The application that we're going to build uses Firebase products that are available for web apps:
+  - Firebase Authentication to easily allow your users to sign into your app.
+
+  - Cloud Firestore to save structured data on the cloud and get instant notification when data changes.
+
+  - Cloud Storaged for Firebase to save files in the cloud.
+
+  - Firebase Hosting to host and serve your assets.
+
+  - Firebase Cloud Messaging to send push notifications and display browser popup notifications.
+
+  - Firebase Performance Monitoring to collect user performance data to your app.
+
+Some the these products need special configuraion or need to enable using the Firebase console.
+
+ADD A FOREBASE WEB APP TO THE PROJECT
+
+1. Click the web icon </> to create a new Firebase web app.
+
+2. Register the app with the nickname FriendlyChat, 
+  then check the box next to "Also set up Firebase Hosting for this app", click Register app.
+
+3. Click through the remain steps.
+  You don't need to follow ths instruction now, these will be convered in later steps of this codelab.
+
+ENABLE GOOGLE SIGN-IN FOR FIREBASE AUTH
+
+To allow users to sign into the web app with their Google accounts, we'll use thr Google sign-in method.
+You'll need to enable Google sign-in:
+1. In the Firebase console, locate the Develop sextion in the left nav.
+
+2. Click Authentication, then click the Sign-in method tab.
+
+3. Enable the Google Sign-in Provider, then click Save.
+
+4. (Optinal) Set the public-facing name of your app to Friendly Chat and choose a project support email from the dropdown menu.
+
+ENABLE CLOUD FIRESTORE
+
+The web app ues Cloud Firestore to save chat message and receove new chat messages.
+
+You'll need to enable Cloud Firestore:
+  1. In the Firebase console's Develop section, click Database.
+
+  2. Click Create database in the Cloud Firestore pane.
+
+  Please be careful to enable Cloud Firestore and NOT the Realtime Database for this codelab.
+  Both options are on the same page, but you need to enable Cloud Firestore which is in the top section of the page. 
+
+  3. Select the Start in the test mode option, then click Enable after reading the disclaimer about the security rules.
+
+  Test mode ensures that we can freely write to the database during development.
+  We'll make our database more secure later in this codelab.
+
+ENABLE CLOUD STORAGE
+
+The web app uses Cloud Storage for Firebase to store, upload and share pictures.
+
+You'll need to enable Cloud Storage:
+
+  1. In the Firebase console's Develop section.
+
+  2. Click Get Started.
+
+  3. Read the disclaimer about security rules for your Firebase project, then click Got it.
+
+With the default security rules, any authenticated user can write anything to Cloud Storage.
+We'll make sure our storage more secure later on this codelab.

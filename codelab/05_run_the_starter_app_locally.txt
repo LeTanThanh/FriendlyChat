@@ -1,0 +1,23 @@
+05. RUN THE STARTER APP LOCALLY
+
+Now that you have imported and configured your project, you are ready to run the web app for the first time.
+
+1. In a console from thw web-start directory, run the following Firebase CLI comamnd:
+
+firebase serve --only hosting
+
+2. Your command line should display the following response:
+
+hosting: Local server: http://localhost:5000
+
+We're using the Firebase Hosting emulator to serve our app locally.
+The web app should now be available from http://localhost:5000. 
+All the files that are located in public subdirectory are served.
+
+3. Using your browser, open your app at http://localhost:5000 
+
+You should see your FriendlyChat app's not (yet!) functioning UI:
+
+The app cannot do anything right now, but with your help it will soon! We've only laid out the UI for you so far.
+
+Let's now build a real time chat!

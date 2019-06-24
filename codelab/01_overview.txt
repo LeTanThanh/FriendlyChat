@@ -1,0 +1,10 @@
+1. OVERVIEW
+
+In this codelab, you'll learn how to use Firebase to easily create web applications
+by implementing and deploy a chat client using Firebase products and services.
+
+What you'll learn:
+- Sync data using Cloud Firestore and Cloud Storage for Firebase.
+- Authenticate your uses using Firebase Auth.
+- Deploy your web app on Firebase Hosting.
+- Send notifications with Firebase Cloud Messaging

@@ -1,0 +1,34 @@
+04. INSTALL THE FIREBASE COMMAND LINE INTERFACE
+
+The Firebase command line interface (CLI) allows you to use Firebase Hosting to serve your web app locally
+as well as to deploy your web app to your Firebase project.
+
+Note: To install the CLI, you need to install npm which typically comes with NodeJS.
+
+1. Install the CLI by running the following npm command:
+  npm -g install firebase-tools
+
+2. Verify that CLI has been installed corectly by running the following command:
+  firebase --version
+
+  Make sure the version of the Firebase CLI í v4.1.0 or later.
+
+3. Authorize the Firebase CLI by running the following command:
+  firebase login
+
+  We've set up the web app template to pull your app's configuration for Firebase Hosting from your app's local directory 
+  (the repository that you cloned earlier in the codelab).
+  But to pull the configuration, we need to associated your app with yout Firebase project.
+
+4. Make sure that your command line is accessing your app's local web-start directory.
+
+5. Associated your app with your Firebase project by running the following command.
+
+  firebase use --add
+
+6. When prompt, select your project ID, then give your Firebase project an alias
+
+  An alias is useful if you gave multiple environments (production, staging, etc).
+  However, for this codelab, let's just use the alias of default.
+
+7. Following the remaining instructions in your command line.

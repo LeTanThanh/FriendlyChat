@@ -1,0 +1,41 @@
+06. IMPORT AND CONFIGURE FIREBASE
+
+IMPORT THE FIREBASE SDK
+
+We need to import the Firebase SDK into teh app,
+For instance, you can import the library from our CDN,
+or you can install it locally using npm, then package it in your app if you're using Browserify.
+
+Since we're using Firebase Hosting to serve our app, we're going to import the local URLs that are in the file index.html (located in your web-start/public directory). 
+For this codelab, we've already added the following lines for you at the bottom of the index.html file, but you can double check that they are there.
+
+index.html
+
+<script src="/__/firebase/6.0.4/firebase-app.js"></script>
+<script src="/__/firebase/6.0.4/firebase-auth.js"></script>
+<script src="/__/firebase/6.0.4/firebase-storage.js"></script>
+<script src="/__/firebase/6.0.4/firebase-messaging.js"></script>
+<script src="/__/firebase/6.0.4/firebase-firestore.js"></script>
+<script src="/__/firebase/6.0.4/firebase-performance.js"></script>
+
+FYI the version number might ne newer in your sample code. as the version is automatically updated in that code.
+
+During this codelab, we're going to use Firebase Auth, Cloud Firestore, Cloud Storage, Cloud Messaging and Performance Monitoring
+so we're importing all of their libraries. 
+In the future apps, make sure that you're only importing the parts of Firebase that you need in order to shorted the load time of app.
+
+CONFIGURE FIREBASE
+
+We also need to configure the Firebase SDK to tell it which Firebase project that we're using.
+Since we're using Firebase Hosting, you can import a special script thay will do this configuration for you.
+Again, for this codelab, we're already added the following line for you at the bottom of the public/index.html file.
+but double check that it is there.
+
+index.html
+
+<script src="/__/firebase/init.js"></script>
+
+This script contains your Firebase project configuration based upon the Firebase project that you specified earlier when you ran firebase use --add.
+
+Fell free to inspect the file init.js to see what your project configuration looks like.
+To do this, open https://localhost:3000/__/firebase/init.js in your browser.
